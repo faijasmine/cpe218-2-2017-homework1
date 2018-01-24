@@ -4,7 +4,13 @@ public class Node {
 
     Character num_ope;
 
-    Node (Character input){
+    Node(Character input) {
         num_ope = input;
     }
+
+    public String toString() {
+        return num_ope.toString();
+    }
+
 }
+

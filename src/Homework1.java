@@ -5,29 +5,32 @@ public class Homework1 {
 	public static Node bitree;
 	public static Stack<Character> numope = new Stack<Character>();
 
-	public static void main(String[] args) {
-		// Begin of arguments input sample
-	//	if (args.length > 0) {
-	//		String input = args[0];
-//			if (input.equalsIgnoreCase("251-*32*+")) {
-//				System.out.println("(2*(5-1))+(3*2)=14");
-//			}
-//		}
-		// End of arguments input sample
-		
-		// TODO: Implement your project here
 
-		String profix = args[0];
-		for(int i=0;i<profix.length();i++)
+	public static void main(String[] args) {
+
+		if(args.length > 0) {
+			String input = args[0];
+			if(input.equalsIgnoreCase("251-*32*+")) {
+				System.out.println("(2*(5-1))+(3*2)=14");
+			}
+		}
+
+
+		String input ="251-*32*+";
+		for(int i=0;i<input.length();i++)
 		{
-			numope.add(profix.charAt(i));
+			numope.add(input.charAt(i));
 		}
 		bitree = new Node(numope.pop());
 
 		infix(bitree);
 		inorder(bitree);
 		System.out.println("="+calculate(bitree));
+		// End of arguments input sample
+		// TODO: Implement your project here
+		TreeDemo.main(args);
 	}
+
 
 	public static void infix(Node z1) {
 		if(z1.num_ope == '+' || z1.num_ope == '-' || z1.num_ope == '*' || z1.num_ope == '/') {
